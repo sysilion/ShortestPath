@@ -7,9 +7,10 @@
 
 #include <stdio.h>
 
-#define NODE_NUM 6
+#define NODE_NUM 5
 #define MAX 999
 
+// recursion
 void PrintPath(int path[][NODE_NUM], int src, int des)
 {
 	if(path[src][des] != 0)
@@ -24,13 +25,21 @@ int main(){
 	int start;
 	int i, j, k;
 
-	int data[NODE_NUM][NODE_NUM] = {
+/*	int data[NODE_NUM][NODE_NUM] = {
 			{ 0, 50, 10, MAX, 45, MAX},
 			{ MAX, 0, 15, MAX, 10, MAX},
 			{ 20, MAX, 0, 15, MAX, MAX},
 			{ MAX, 20, MAX, 0, 35, MAX},
 			{ MAX, MAX, MAX, 30, 0, MAX},
 			{ MAX, MAX, MAX, 3, MAX, 0}
+	};*/
+
+	int data[NODE_NUM][NODE_NUM] = {
+			{0, 10, 50, 15, 10},
+			{MAX, 0, 5, MAX, MAX},
+			{MAX, MAX, 0, MAX, MAX},
+			{MAX, MAX, 10, 0, MAX},
+			{MAX, MAX, MAX, 5, 0}
 	};
 
 	int result[NODE_NUM][NODE_NUM] = {};
@@ -73,6 +82,7 @@ int main(){
 //		printf("\n");
 //	}
 
+	// print
 	for(i = 0; i < NODE_NUM ; i++){
 		if(start == i)
 			continue;
